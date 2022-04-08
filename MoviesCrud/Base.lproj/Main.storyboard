@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lKZ-hd-DAA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Library Movies-->
+        <scene sceneID="5xl-1y-iu1">
+            <objects>
+                <tableViewController id="Q7A-fM-Ed4" customClass="ListarFilmesTableViewController" customModule="MoviesCrud" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NVl-6g-Y4H" customClass="TableView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="separatorColor" systemColor="systemTealColor"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemGray4Color"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaReuso" rowHeight="48" id="hXS-3Z-LW6">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="48"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXS-3Z-LW6" id="IIX-53-BRh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Q7A-fM-Ed4" id="ckT-bz-RL9"/>
+                            <outlet property="delegate" destination="Q7A-fM-Ed4" id="fs7-Ik-lbr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Library Movies" id="cyd-hd-pkk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sjK-1N-r81">
+                            <connections>
+                                <segue destination="Lsv-Bx-HfY" kind="show" identifier="verFilmes" id="Q9Z-HC-dgz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwI-2V-J26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4310.144927536232" y="103.79464285714285"/>
+        </scene>
+        <!--Add-->
+        <scene sceneID="Tax-S7-h9U">
+            <objects>
+                <viewController id="Lsv-Bx-HfY" customClass="AdicionarFilmesViewController" customModule="MoviesCrud" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kop-2j-0Dc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Efb-ZJ-836">
+                                <rect key="frame" x="0.0" y="96" width="404" height="773"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bJa-AV-bVr"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Efb-ZJ-836" secondAttribute="trailing" constant="-9" id="4Kr-dJ-gjH"/>
+                            <constraint firstAttribute="bottom" secondItem="Efb-ZJ-836" secondAttribute="bottom" constant="19" id="7TW-uG-QoS"/>
+                            <constraint firstItem="bJa-AV-bVr" firstAttribute="trailing" secondItem="Efb-ZJ-836" secondAttribute="trailing" constant="10" id="8LX-ct-2vp"/>
+                            <constraint firstAttribute="bottom" secondItem="Efb-ZJ-836" secondAttribute="bottom" constant="27" id="8pn-EH-pin"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="leading" secondItem="Kop-2j-0Dc" secondAttribute="leading" constant="-10" id="Gld-uQ-eyW"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="top" secondItem="bJa-AV-bVr" secondAttribute="top" id="ND6-vg-N7k"/>
+                            <constraint firstAttribute="bottom" secondItem="Efb-ZJ-836" secondAttribute="bottom" constant="27" id="Ux5-wl-efx"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="leading" secondItem="bJa-AV-bVr" secondAttribute="leading" id="ZRy-sU-Ssu"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="trailing" secondItem="bJa-AV-bVr" secondAttribute="trailing" id="akU-Bc-ZMZ"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="top" secondItem="bJa-AV-bVr" secondAttribute="top" id="bHq-JT-fg8"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="leading" secondItem="bJa-AV-bVr" secondAttribute="leading" id="gGX-em-Aae"/>
+                            <constraint firstItem="Efb-ZJ-836" firstAttribute="top" secondItem="bJa-AV-bVr" secondAttribute="top" constant="8" id="yY6-zy-neT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add" id="6hB-qq-5So">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2uH-Kn-Aj6">
+                            <connections>
+                                <action selector="salvar:" destination="Lsv-Bx-HfY" id="qsC-Mp-AtU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="texto" destination="Efb-ZJ-836" id="sq8-gB-Z4r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUO-5L-lDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5071.0144927536239" y="103.79464285714285"/>
+        </scene>
+        <!--Inicial-->
+        <scene sceneID="ksF-Ek-tMy">
+            <objects>
+                <navigationController title="Inicial" automaticallyAdjustsScrollViewInsets="NO" id="lKZ-hd-DAA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7io-nq-l8q">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q7A-fM-Ed4" kind="relationship" relationship="rootViewController" id="BZT-xn-JM4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txN-9q-lqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3400.0000000000005" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
