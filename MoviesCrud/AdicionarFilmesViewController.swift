@@ -7,20 +7,21 @@
 
 import UIKit
 import CoreData
-///////////////////////////////////// Salvar os dados
+        // Salvar os dados.
 class AdicionarFilmesViewController: UIViewController {
     
     @IBOutlet weak var texto: UITextView!
+    
     var context: NSManagedObjectContext!
     var filme: NSManagedObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // cofigurações iniciais
+        // Cofigurações iniciais.
         self.texto.becomeFirstResponder()
-        
-        if filme != nil { //Atualizar
+        //Atualizar.
+        if filme != nil {
             
             if let filmeRecuperado = filme.value(forKey: "texto") {
                 self.texto.text = String(describing: filmeRecuperado)
@@ -42,12 +43,12 @@ class AdicionarFilmesViewController: UIViewController {
         }else{
             self.salvarFilme()
         }
-        // retorna para atela inicial
+        // Retorna para atela inicial.
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     func atualizarFilme() {
-        
+        // Adicionar filmes.
         filme.setValue(self.texto.text, forKey: "texto")
         
         do {
@@ -58,11 +59,11 @@ class AdicionarFilmesViewController: UIViewController {
         }
         
     }
-/// metodo que salva os dados
+        /// Método que salva os dados.
     func salvarFilme() {
-        /// cria objeto para filme
+        /// Cria objeto para filme
         let NovoFilme = NSEntityDescription.insertNewObject(forEntityName: "Salvamento", into: context)
-        ///configura filme
+        /// Configura os filmes.
         NovoFilme.setValue(self.texto.text, forKey: "texto")
         
         do {

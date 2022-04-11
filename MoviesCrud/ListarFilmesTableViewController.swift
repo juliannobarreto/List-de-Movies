@@ -25,7 +25,7 @@ class ListarFilmesTableViewController: UITableViewController {
         self.recuperarFilmes()
     }
     
-    func recuperarFilmes() {////////////////////////// arrumar aqui
+    func recuperarFilmes() {
         
         let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: "Salvamento")
         let ordenacao = NSSortDescriptor(key: "texto", ascending: false)
@@ -36,10 +36,15 @@ class ListarFilmesTableViewController: UITableViewController {
             let filmesRecuperados = try context.fetch(requisicao)
             self.filmes = filmesRecuperados as! [NSManagedObject]
             self.tableView.reloadData()
+            
         } catch let erro {
             print("Erro ao recuperar os filmes: \(erro.localizedDescription)")
         }
                 
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,8 +110,9 @@ class ListarFilmesTableViewController: UITableViewController {
             
             do{
                 try self.context.save()
+                print("O filme foi deletado com sucesso!")
             } catch let erro {
-                print("Erro ao remover item \(erro)")
+                print("Erro ao deletar o filme \(erro)")
             }
             
         }
